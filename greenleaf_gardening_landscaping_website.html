@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow" />
+    <title>GreenLeaf Gardening & Landscaping | Perth, WA</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="logo-icon.png">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            green: '#54B435',
+                            darkGreen: '#3e8e24',
+                            lightBg: '#F2F8F1',
+                            iconBg: '#EBF5E9',
+                            darkFooter: '#09140e',
+                            cardBg: '#F8FAF8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1A202C;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-heading {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        /* Hero Overlay Gradient matching the mockup */
+        .hero-bg {
+            background-image:
+                linear-gradient(90deg, rgba(8, 20, 12, 0.88) 0%, rgba(10, 24, 15, 0.72) 45%, rgba(10, 24, 15, 0.25) 100%),
+                linear-gradient(180deg, rgba(8, 20, 12, 0.65) 0%, rgba(8, 20, 12, 0.1) 30%, rgba(8, 20, 12, 0.85) 100%),
+                url('https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=2000&q=85');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Testimonials Foliage Dark Background */
+        .testimonials-bg {
+            background-image:
+                linear-gradient(90deg, rgba(7, 22, 12, 0.90) 0%, rgba(11, 32, 18, 0.82) 100%),
+                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* CTA Banner Dark Grass Background */
+        .cta-bg {
+            background-image:
+                linear-gradient(90deg, rgba(7, 22, 12, 0.92) 0%, rgba(15, 42, 22, 0.78) 60%, rgba(18, 52, 26, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1533460004989-cef01064af7e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Service Card Hover Subtle Lift */
+        .service-card {
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 18px 35px -10px rgba(16, 42, 23, 0.12);
+        }
+
+        .service-card:hover .service-img {
+            transform: scale(1.05);
+        }
+
+        /* Custom Navigation Active Underline */
+        .nav-link {
+            position: relative;
+            padding-bottom: 6px;
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2.5px;
+            background-color: #54B435;
+            border-radius: 2px;
+        }
+
+        .nav-link:not(.active)::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2.5px;
+            background-color: #54B435;
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="bg-white antialiased selection:bg-brand-green selection:text-white">
+
+    <!-- ================= HEADER & HERO SECTION ================= -->
+    <div id="home" class="relative hero-bg text-white min-h-[680px] lg:min-h-[740px] flex flex-col justify-between">
+
+        <!-- Navigation Bar -->
+        <header id="navbar" class="w-full z-40 transition-all duration-300 py-5">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+
+                <!-- Brand Logo -->
+                <a href="#home" class="flex items-center group focus:outline-none"
+                    aria-label="GreenLeaf Gardening & Landscaping">
+                    <img src="logo-white.png" alt="GreenLeaf Gardening & Landscaping"
+                        class="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                </a>
+
+                <!-- Desktop Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-100">
+                    <a href="#home" class="nav-link active text-white">Home</a>
+                    <a href="#services" class="nav-link hover:text-white transition">Services</a>
+                    <a href="#about" class="nav-link hover:text-white transition">About</a>
+                    <a href="#gallery" class="nav-link hover:text-white transition">Gallery</a>
+                    <a href="#testimonials" class="nav-link hover:text-white transition">Testimonials</a>
+                    <a href="#contact" class="nav-link hover:text-white transition">Contact</a>
+                </nav>
+
+                <!-- Quote CTA Button -->
+                <div class="hidden md:block">
+                    <button onclick="openQuoteModal()"
+                        class="bg-brand-green hover:bg-brand-darkGreen text-white text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-full inline-flex items-center gap-2 transition duration-200 shadow-lg shadow-brand-green/25">
+                        <span>Get a Free Quote</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button id="mobileMenuBtn"
+                    class="md:hidden text-white p-2 rounded-lg hover:bg-white/10 focus:outline-none"
+                    aria-label="Toggle Menu">
+                    <svg id="menuOpenIcon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="menuCloseIcon" class="w-7 h-7 hidden" fill="none" stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Dropdown Menu -->
+            <div id="mobileMenu"
+                class="hidden md:hidden bg-[#0c1a12]/95 backdrop-blur-md border-b border-white/10 px-6 pt-4 pb-6 mt-3 space-y-3">
+                <a href="#home" class="block py-2 text-brand-green font-semibold">Home</a>
+                <a href="#services" class="block py-2 text-gray-200 hover:text-white">Services</a>
+                <a href="#about" class="block py-2 text-gray-200 hover:text-white">About</a>
+                <a href="#gallery" class="block py-2 text-gray-200 hover:text-white">Gallery</a>
+                <a href="#testimonials" class="block py-2 text-gray-200 hover:text-white">Testimonials</a>
+                <a href="#contact" class="block py-2 text-gray-200 hover:text-white">Contact</a>
+                <div class="pt-2">
+                    <button onclick="openQuoteModal()"
+                        class="w-full bg-brand-green hover:bg-brand-darkGreen text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2">
+                        <span>Get a Free Quote</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Hero Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-8 pb-16 lg:py-20">
+            <div class="max-w-2xl">
+                <p class="text-xs sm:text-[13px] uppercase tracking-[0.15em] text-gray-200 font-semibold mb-3.5">
+                    BEAUTIFUL SPACES. HEALTHY PLANTS. LASTING RESULTS.
+                </p>
+                <h1
+                    class="font-heading text-4xl sm:text-5xl lg:text-[54px] font-extrabold leading-[1.12] tracking-tight mb-5">
+                    Professional Gardening <br class="hidden sm:inline" />
+                    &amp; Landscaping in <span class="text-brand-green">Perth</span>
+                </h1>
+                <p class="text-base sm:text-lg text-gray-200 font-normal leading-relaxed mb-8 max-w-xl">
+                    From regular garden maintenance to complete landscape makeovers, we help you create outdoor spaces
+                    you'll love coming home to.
+                </p>
+
+                <!-- Hero CTA Buttons -->
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="openQuoteModal()"
+                        class="bg-brand-green hover:bg-brand-darkGreen text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-full inline-flex items-center gap-2.5 transition duration-200 shadow-lg shadow-brand-green/30">
+                        <span>Get a Free Quote</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                    <a href="#services"
+                        class="bg-black/25 hover:bg-white/15 text-white border border-white/60 font-medium text-sm sm:text-base px-8 py-3.5 rounded-full transition duration-200 backdrop-blur-xs">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Hero Trust Strip -->
+        <div class="w-full bg-[#09150e]/80 backdrop-blur-md border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-0 lg:divide-x lg:divide-white/15">
+
+                    <!-- Trust Item 1 -->
+                    <div class="flex items-center gap-3.5 lg:pr-6">
+                        <div class="flex-shrink-0 text-brand-green">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M19.5 4.5C12.5 4.5 7 8.5 5.5 16C5.5 16 9.5 12 14.5 11.5C10 13.5 6.5 18 5 21.5C5 21.5 8 20 11.5 20C17.5 20 20.5 14.5 19.5 4.5Z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white leading-snug">Reliable &amp; Punctual</h3>
+                            <p class="text-xs text-gray-300 mt-0.5">We show up when we say we will.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Item 2 -->
+                    <div class="flex items-center gap-3.5 lg:px-6">
+                        <div class="flex-shrink-0 text-brand-green">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white leading-snug">Fully Insured</h3>
+                            <p class="text-xs text-gray-300 mt-0.5">Your property is in safe hands.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Item 3 -->
+                    <div class="flex items-center gap-3.5 lg:px-6">
+                        <div class="flex-shrink-0 text-brand-green">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white leading-snug">Quality Workmanship</h3>
+                            <p class="text-xs text-gray-300 mt-0.5">Attention to detail in every job.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trust Item 4 -->
+                    <div class="flex items-center gap-3.5 lg:pl-6">
+                        <div class="flex-shrink-0 text-brand-green">
+                            <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.8">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-bold text-white leading-snug">Local Perth Team</h3>
+                            <p class="text-xs text-gray-300 mt-0.5">Proudly serving the Perth community.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= OUR SERVICES SECTION ================= -->
+    <section id="services" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="max-w-2xl mb-12">
+                <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
+                    OUR SERVICES
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3.5">
+                    Complete Garden &amp; Landscaping Solutions
+                </h2>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    We offer a wide range of services to keep your outdoor space looking its best, no matter the size or
+                    style.
+                </p>
+            </div>
+
+            <!-- 3x2 Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+
+                <!-- Card 1: Lawn Mowing & Care -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="lawn-mowing-care.jpg" alt="Lawn Mowing & Care"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Grass Blades Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 26h24" />
+                                <path d="M8 26c0-6-2-11-4-14 4 2 6 7 7 14" />
+                                <path d="M16 26c0-8 1-14 0-18 2 4 3 10 2 18" />
+                                <path d="M24 26c0-6 2-11 4-14-4 2-6 7-7 14" />
+                                <path d="M12 26c0-5-1-9-2-12" />
+                                <path d="M20 26c0-5 1-9 2-12" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Lawn Mowing &amp; Care</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Keep your lawn healthy, green and looking its best all year round.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Hedge Trimming -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="hedge-trimming.jpg" alt="Hedge Trimming"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Bush / Hedge Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 25h20" />
+                                <path d="M8 25v-5a4 4 0 014-4 5 5 0 019.5-1.5A4.5 4.5 0 0124 23v2" />
+                                <path d="M13 12a3.5 3.5 0 016.5-1" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Hedge Trimming</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Neat, tidy hedges for a clean and polished look.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Garden Maintenance -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="garden-maintenance.jpg" alt="Garden Maintenance"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Sprout / Plant Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 26V12" />
+                                <path d="M16 18c-4.5 0-8-3-8-7.5 4.5 0 8 3 8 7.5z" />
+                                <path d="M16 14c4.5 0 8-3 8-7.5-4.5 0-8 3-8 7.5z" />
+                                <path d="M10 26h12" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Garden Maintenance</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Weeding, pruning, mulching and more to keep your garden thriving.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Landscape Design & Makeovers -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="landscape-design.jpg" alt="Landscape Design & Makeovers"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Landscape / Hills & Sun Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="22" cy="10" r="3" />
+                                <path d="M4 24l7-8 6 6 4-4 7 6" />
+                                <path d="M4 26h24" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Landscape Design &amp; Makeovers
+                        </h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Transform your outdoor space with custom designs and expert installation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Reticulation & Irrigation -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="reticulation-irrigation.jpg" alt="Reticulation & Irrigation"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Sprinkler / Water Drops Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 18v8" />
+                                <path d="M11 26h10" />
+                                <circle cx="16" cy="16" r="2" />
+                                <path d="M12 13c-2.5-2-5-2-7 0" />
+                                <path d="M20 13c2.5-2 5-2 7 0" />
+                                <path d="M14 10c-1.5-3-4-4-7-3" />
+                                <path d="M18 10c1.5-3 4-4 7-3" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Reticulation &amp; Irrigation</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Efficient watering systems for healthy, low-maintenance gardens.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 6: Tree & Shrub Care -->
+                <div class="service-card bg-[#F8FAF8] rounded-2xl overflow-hidden border border-gray-100 flex flex-col">
+                    <div class="h-52 overflow-hidden relative">
+                        <img src="tree-shrub-care.jpg" alt="Tree & Shrub Care"
+                            class="service-img w-full h-full object-cover transition-transform duration-500">
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Tree Outline Icon -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 27V18" />
+                                <path d="M12 27h8" />
+                                <path d="M16 6a6 6 0 00-5.2 9A5 5 0 0011 24h10a5 5 0 00.2-9A6 6 0 0016 6z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-lg font-bold text-gray-900 mb-2">Tree &amp; Shrub Care</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Safe and professional trimming and removal services.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT US SECTION ================= -->
+    <section id="about" class="py-16 lg:py-24 bg-brand-lightBg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+
+                <!-- Left Column: Garden Landscape Image -->
+                <div class="lg:col-span-6">
+                    <div class="relative rounded-2xl overflow-hidden shadow-lg aspect-[4/3.6] bg-gray-900">
+                        <img src="about-garden.jpg" alt="Immaculate Perth landscaped residential garden by GreenLeaf"
+                            class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: About Copy & Stats -->
+                <div class="lg:col-span-6">
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
+                        ABOUT US
+                    </span>
+                    <h2
+                        class="font-heading text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-[1.18] mb-5">
+                        Local Experts. Passionate <br class="hidden sm:inline" />About Green Spaces.
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-8">
+                        GreenLeaf Gardening &amp; Landscaping is a Perth-based team dedicated to creating and
+                        maintaining beautiful, functional outdoor spaces. With years of experience and a genuine love
+                        for what we do, we take pride in delivering high-quality, reliable and affordable services for
+                        homes and businesses across Perth.
+                    </p>
+
+                    <!-- 3 Key Stats Row -->
+                    <div class="grid grid-cols-3 gap-4 sm:gap-6 mb-9 pt-2">
+
+                        <!-- Stat 1: 5+ Years Experience -->
+                        <div class="flex items-start sm:items-center gap-2.5">
+                            <div class="text-brand-green flex-shrink-0">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M19.5 4.5C12.5 4.5 7 8.5 5.5 16C5.5 16 9.5 12 14.5 11.5C10 13.5 6.5 18 5 21.5C5 21.5 8 20 11.5 20C17.5 20 20.5 14.5 19.5 4.5Z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xl sm:text-2xl font-extrabold text-gray-900 leading-none">
+                                    5+</div>
+                                <div class="text-[11px] sm:text-xs text-gray-500 mt-1">Years Experience</div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 2: 1000+ Happy Clients -->
+                        <div class="flex items-start sm:items-center gap-2.5">
+                            <div class="text-brand-green flex-shrink-0">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xl sm:text-2xl font-extrabold text-gray-900 leading-none">
+                                    1000+</div>
+                                <div class="text-[11px] sm:text-xs text-gray-500 mt-1">Happy Clients</div>
+                            </div>
+                        </div>
+
+                        <!-- Stat 3: 100% Satisfaction Guarantee -->
+                        <div class="flex items-start sm:items-center gap-2.5">
+                            <div class="text-brand-green flex-shrink-0">
+                                <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                                    <path
+                                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="font-heading text-xl sm:text-2xl font-extrabold text-gray-900 leading-none">
+                                    100%</div>
+                                <div class="text-[11px] sm:text-xs text-gray-500 mt-1">Satisfaction Guarantee</div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- CTA Pill Button -->
+                    <a href="#contact"
+                        class="bg-brand-green hover:bg-brand-darkGreen text-white font-semibold text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2.5 transition duration-200 shadow-md shadow-brand-green/20">
+                        <span>Learn More About Us</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= WHY CHOOSE US SECTION ================= -->
+    <section class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Left-aligned Section Header -->
+            <div class="max-w-xl mb-14">
+                <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
+                    WHY CHOOSE US
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3.5">
+                    Why Choose GreenLeaf?
+                </h2>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    We go the extra mile to make sure your garden looks great, stays healthy, and adds value to your
+                    property.
+                </p>
+            </div>
+
+            <!-- 4 Centered Feature Columns -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+
+                <!-- Feature 1: Personalised Service -->
+                <div class="flex flex-col items-center px-3">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-iconBg flex items-center justify-center text-brand-green mb-5">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66l.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75" />
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-gray-900 mb-2">Personalised Service</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-[220px]">
+                        We tailor our services to your needs and budget.
+                    </p>
+                </div>
+
+                <!-- Feature 2: Affordable Pricing -->
+                <div class="flex flex-col items-center px-3">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-iconBg flex items-center justify-center text-brand-green mb-5">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <path d="M9 12l2 2 4-4" />
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-gray-900 mb-2">Affordable Pricing</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-[220px]">
+                        Quality work at competitive rates.
+                    </p>
+                </div>
+
+                <!-- Feature 3: Flexible Scheduling -->
+                <div class="flex flex-col items-center px-3">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-iconBg flex items-center justify-center text-brand-green mb-5">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 7v5l3 3" />
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-gray-900 mb-2">Flexible Scheduling</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-[220px]">
+                        We work around your lifestyle.
+                    </p>
+                </div>
+
+                <!-- Feature 4: Customer Focused -->
+                <div class="flex flex-col items-center px-3">
+                    <div
+                        class="w-16 h-16 rounded-full bg-brand-iconBg flex items-center justify-center text-brand-green mb-5">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3" />
+                        </svg>
+                    </div>
+                    <h3 class="font-heading text-base font-bold text-gray-900 mb-2">Customer Focused</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed max-w-[220px]">
+                        Your satisfaction is our priority.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= TESTIMONIALS SECTION ================= -->
+    <section id="testimonials" class="py-16 lg:py-20 testimonials-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="mb-10">
+                <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
+                    TESTIMONIALS
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    What Our Clients Say
+                </h2>
+            </div>
+
+            <!-- 3 Testimonial Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
+
+                <!-- Testimonial Card 1 -->
+                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <!-- Green Quote Mark -->
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            "The team at GreenLeaf did an amazing job on our garden. They were professional, reliable
+                            and the results were better than we could have imagined!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-2">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
+                            alt="Sarah M." class="w-10 h-10 rounded-full object-cover border border-gray-200"
+                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=SM'">
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 leading-tight">Sarah M.</h4>
+                            <span class="text-xs text-gray-400">Applecross, WA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            "Great service, affordable prices and fantastic communication. Our lawn has never looked
+                            better. Highly recommend!"
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-2">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                            alt="James T." class="w-10 h-10 rounded-full object-cover border border-gray-200"
+                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=JT'">
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 leading-tight">James T.</h4>
+                            <span class="text-xs text-gray-400">Mount Pleasant, WA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
+                    <div>
+                        <div class="text-brand-green mb-3">
+                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            "From start to finish, the process was smooth and easy. The crew were friendly, worked hard
+                            and left our yard looking incredible."
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3.5 pt-2">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
+                            alt="Emily R." class="w-10 h-10 rounded-full object-cover border border-gray-200"
+                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=ER'">
+                        <div>
+                            <h4 class="text-sm font-bold text-gray-900 leading-tight">Emily R.</h4>
+                            <span class="text-xs text-gray-400">Como, WA</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= RECENT PROJECTS / GALLERY SECTION ================= -->
+    <section id="gallery" class="py-16 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Section Header -->
+            <div class="max-w-xl mb-10">
+                <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
+                    OUR WORK
+                </span>
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-2.5">
+                    Recent Projects
+                </h2>
+                <p class="text-gray-600 text-sm sm:text-base">
+                    Take a look at some of our recent garden and landscaping transformations.
+                </p>
+            </div>
+
+            <!-- 4-Column Project Image Grid -->
+
+            <div id="projectsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+
+                <!-- Project 1 -->
+                <div onclick="openLightbox('project-1.jpg', 'Contemporary Backyard Lawn & Border Planting — Dalkeith, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-1.jpg" alt="Contemporary Backyard Lawn and Border Planting in Dalkeith, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Dalkeith Backyard Makeover</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div onclick="openLightbox('project-2.jpg', 'Timber Decking & Limestone Planters with Warm Lighting — South Perth, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-2.jpg" alt="Timber Decking and Limestone Planters in South Perth, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">South Perth Timber Decking</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div onclick="openLightbox('project-3.jpg', 'Tropical Palms & Illuminated Stone Retaining Wall — Cottesloe, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-3.jpg" alt="Tropical Palms and Illuminated Stone Retaining Wall in Cottesloe, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Cottesloe Retaining Wall &amp;
+                            Lighting</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div onclick="openLightbox('project-4.jpg', 'Stepping Stone Pathway & Native Coastal Garden — Floreat, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-4.jpg" alt="Stepping Stone Pathway and Native Coastal Garden in Floreat, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Floreat Stone Pathway Design</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Extra Hidden Projects Row (Toggled by "View More Projects" button) -->
+            <div id="moreProjectsGrid" class="hidden grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+                <!-- Project 5 -->
+                <div onclick="openLightbox('project-5.jpg', 'Sir Walter Buffalo Turf Installation — Subiaco, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-5.jpg" alt="Sir Walter Buffalo Turf Installation in Subiaco, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Subiaco Turf Rollout</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div onclick="openLightbox('project-6.jpg', 'Front Courtyard Pavers & Reticulation — Nedlands, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-6.jpg" alt="Front Courtyard Pavers and Reticulation in Nedlands, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Nedlands Courtyard Paving</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div onclick="openLightbox('project-7.jpg', 'Formal Lilly Pilly Hedge Shaping — Claremont, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-7.jpg" alt="Formal Lilly Pilly Hedge Shaping in Claremont, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Claremont Formal Hedging</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div onclick="openLightbox('project-8.jpg', 'Mature Tree Canopy Pruning & Mulching — Melville, WA')"
+                    class="group relative h-52 sm:h-48 lg:h-44 rounded-xl overflow-hidden cursor-pointer shadow-xs border border-gray-100">
+                    <img src="project-8.jpg" alt="Mature Tree Canopy Pruning and Mulching in Melville, WA"
+                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white text-xs font-bold tracking-wide">Melville Canopy Care</span>
+                        <span
+                            class="text-emerald-300 text-[10px] uppercase font-semibold tracking-wider flex items-center gap-1 mt-0.5">
+                            <span>Click to view</span>
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Centered Outline Button -->
+            <div class="text-center">
+                <button id="toggleProjectsBtn" onclick="toggleMoreProjects()"
+                    class="border border-brand-green text-brand-green hover:bg-brand-green hover:text-white font-semibold text-sm px-7 py-3 rounded-full inline-flex items-center gap-2 transition duration-200">
+                    <span id="toggleProjectsText">View More Projects</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= GET STARTED CTA BANNER ================= -->
+    <section class="cta-bg py-12 lg:py-14 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-1.5">
+                        GET STARTED
+                    </span>
+                    <h2 class="font-heading text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-1.5">
+                        Ready to Transform Your Outdoor Space?
+                    </h2>
+                    <p class="text-gray-200 text-sm sm:text-base">
+                        Contact us today for a free quote and let's bring your garden vision to life.
+                    </p>
+                </div>
+                <div class="flex-shrink-0">
+                    <button onclick="openQuoteModal()"
+                        class="bg-brand-green hover:bg-brand-darkGreen text-white font-semibold text-sm px-7 py-3.5 rounded-full inline-flex items-center gap-2.5 transition duration-200 shadow-lg shadow-black/25">
+                        <span>Get a Free Quote</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contact" class="bg-brand-darkFooter text-gray-300 pt-14 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+
+                <!-- Col 1: Brand Info & Socials (4 cols) -->
+                <div class="lg:col-span-4 pr-4">
+                    <a href="#home" class="inline-block mb-4 group focus:outline-none"
+                        aria-label="GreenLeaf Gardening & Landscaping">
+                        <img src="logo-white.png" alt="GreenLeaf Gardening & Landscaping"
+                            class="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+                    </a>
+                    <p class="text-xs sm:text-sm text-gray-400 leading-relaxed mb-6 max-w-xs">
+                        Professional gardening and landscaping services across Perth. Creating beautiful, functional
+                        outdoor spaces.
+                    </p>
+                    <!-- Social Icons -->
+                    <div class="flex items-center gap-3.5 text-brand-green">
+                        <!-- Facebook -->
+                        <a href="#contact" aria-label="Facebook"
+                            class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-green hover:text-white flex items-center justify-center transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="#contact" aria-label="Instagram"
+                            class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-green hover:text-white flex items-center justify-center transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                            </svg>
+                        </a>
+                        <!-- YouTube -->
+                        <a href="#contact" aria-label="YouTube"
+                            class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-green hover:text-white flex items-center justify-center transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                            </svg>
+                        </a>
+                        <!-- Directory / Houzz Badge -->
+                        <a href="#contact" aria-label="Directory"
+                            class="w-8 h-8 rounded-full bg-white/5 hover:bg-brand-green hover:text-white flex items-center justify-center transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path
+                                    d="M4 3h16a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm4 4v10h2.5v-4h3v4H16V7h-2.5v3.5h-3V7H8z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Quick Links (2 cols) -->
+                <div class="lg:col-span-2">
+                    <h4 class="text-white font-heading font-bold text-sm mb-4">Quick Links</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-brand-green transition">Home</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Services</a></li>
+                        <li><a href="#about" class="hover:text-brand-green transition">About</a></li>
+                        <li><a href="#gallery" class="hover:text-brand-green transition">Gallery</a></li>
+                        <li><a href="#testimonials" class="hover:text-brand-green transition">Testimonials</a></li>
+                        <li><a href="#contact" class="hover:text-brand-green transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Our Services (3 cols) -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-heading font-bold text-sm mb-4">Our Services</h4>
+                    <ul class="space-y-2.5 text-xs sm:text-sm text-gray-400">
+                        <li><a href="#services" class="hover:text-brand-green transition">Lawn Mowing &amp; Care</a>
+                        </li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Hedge Trimming</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Garden Maintenance</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Landscape Design &amp;
+                                Makeovers</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Reticulation &amp;
+                                Irrigation</a></li>
+                        <li><a href="#services" class="hover:text-brand-green transition">Tree &amp; Shrub Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contact Us (3 cols) -->
+                <div class="lg:col-span-3">
+                    <h4 class="text-white font-heading font-bold text-sm mb-4">Contact Us</h4>
+                    <ul class="space-y-3 text-xs sm:text-sm text-gray-400">
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                            </svg>
+                            <a href="tel:0400123456" class="hover:text-white transition">0400 123 456</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                            </svg>
+                            <a href="mailto:info@greenleaf.com.au"
+                                class="hover:text-white transition">info@greenleaf.com.au</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <svg class="w-4 h-4 text-brand-green flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd" />
+                            </svg>
+                            <span>Perth, WA</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright Bar -->
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+                <p>&copy; 2026 GreenLeaf Gardening &amp; Landscaping. All rights reserved.</p>
+                <div class="flex items-center gap-6">
+                    <button type="button" onclick="openPrivacyModal()" class="hover:text-gray-300 transition cursor-pointer">Privacy Policy</button>
+                    <button type="button" onclick="openTermsModal()" class="hover:text-gray-300 transition cursor-pointer">Terms &amp; Conditions</button>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ================= FREE QUOTE MODAL ================= -->
+    <div id="quoteModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-xs p-4">
+        <div
+            class="bg-white rounded-2xl max-w-lg w-full p-6 sm:p-8 relative shadow-2xl border border-gray-100 animate-fadeIn">
+            <!-- Close Button -->
+            <button onclick="closeQuoteModal()"
+                class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 p-1 rounded-full hover:bg-gray-100 transition"
+                aria-label="Close modal">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+
+            <div id="quoteFormContainer">
+                <img src="logo.png" alt="GreenLeaf Gardening & Landscaping" class="h-8 w-auto mb-3 object-contain">
+                <span class="text-xs font-bold uppercase tracking-wider text-brand-green block mb-1">FREE NO-OBLIGATION
+                    ESTIMATE</span>
+                <h3 class="font-heading text-2xl font-extrabold text-gray-900 mb-2">Request a Free Quote</h3>
+                <p class="text-xs sm:text-sm text-gray-600 mb-6">Fill in your details below and our local Perth team
+                    will get back to you within 24 hours.</p>
+
+                <form id="quoteForm" onsubmit="submitQuoteForm(event)" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" required placeholder="e.g. Sarah Mitchell"
+                                class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Phone Number *</label>
+                            <input type="tel" required placeholder="e.g. 0400 123 456"
+                                class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Perth Suburb *</label>
+                            <input type="text" required placeholder="e.g. Applecross, Como"
+                                class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Service Needed *</label>
+                            <select required
+                                class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green bg-white">
+                                <option value="Lawn Mowing & Care">Lawn Mowing &amp; Care</option>
+                                <option value="Hedge Trimming">Hedge Trimming</option>
+                                <option value="Garden Maintenance">Garden Maintenance</option>
+                                <option value="Landscape Design & Makeovers">Landscape Design &amp; Makeovers</option>
+                                <option value="Reticulation & Irrigation">Reticulation &amp; Irrigation</option>
+                                <option value="Tree & Shrub Care">Tree &amp; Shrub Care</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-700 mb-1">Tell us about your garden
+                            project</label>
+                        <textarea rows="3" placeholder="Approximate yard size, preferred days, or specific goals..."
+                            class="w-full px-3.5 py-2.5 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-green focus:border-transparent"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-brand-green hover:bg-brand-darkGreen text-white font-semibold py-3.5 rounded-full shadow-md transition flex items-center justify-center gap-2">
+                        <span>Send My Free Quote Request</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Confirmation Message State -->
+            <div id="quoteSuccess" class="hidden text-center py-8">
+                <div
+                    class="w-16 h-16 rounded-full bg-brand-iconBg text-brand-green flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-9 h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h3 class="font-heading text-2xl font-extrabold text-gray-900 mb-2">Quote Request Received!</h3>
+                <p class="text-sm text-gray-600 mb-6 max-w-sm mx-auto">
+                    Thank you for reaching out to GreenLeaf Gardening &amp; Landscaping. One of our friendly Perth
+                    landscapers will call you shortly.
+                </p>
+                <button onclick="closeQuoteModal()"
+                    class="bg-brand-green hover:bg-brand-darkGreen text-white font-semibold text-sm px-8 py-3 rounded-full transition">
+                    Back to Website
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= IMAGE LIGHTBOX MODAL ================= -->
+    <div id="lightboxModal" onclick="closeLightbox()"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black/85 p-4 cursor-zoom-out">
+        <div class="max-w-4xl w-full relative" onclick="event.stopPropagation()">
+            <button onclick="closeLightbox()"
+                class="absolute -top-10 right-0 text-white hover:text-brand-green transition flex items-center gap-1 text-sm font-medium">
+                <span>Close</span>
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <img id="lightboxImg" src="" alt="Project Preview"
+                class="w-full max-h-[78vh] object-contain rounded-xl shadow-2xl border border-white/15 bg-black/40">
+            <p id="lightboxCaption" class="text-white text-center font-heading font-semibold text-sm sm:text-base mt-3">
+            </p>
+        </div>
+    </div>
+
+    <!-- ================= PROJECT PROTOTYPE & SANDBOX NOTICE MODAL ================= -->
+    <div id="sandboxNoticeModal" onclick="closeSandboxNoticeModal()"
+        class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 backdrop-blur-xs p-4">
+        <div onclick="event.stopPropagation()"
+            class="bg-brand-darkFooter text-gray-300 rounded-2xl max-w-2xl w-full max-h-[85vh] flex flex-col relative shadow-2xl border border-white/10">
+            <!-- Header -->
+            <div class="flex items-center justify-between px-6 sm:px-8 py-5 border-b border-white/10">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-1">LEGAL &amp; SANDBOX ENVIRONMENT</span>
+                    <h3 class="font-heading text-xl sm:text-2xl font-extrabold text-white tracking-tight">Project Prototype &amp; Sandbox Notice</h3>
+                </div>
+                <button onclick="closeSandboxNoticeModal()"
+                    class="text-gray-400 hover:text-white p-1.5 rounded-full hover:bg-white/10 transition"
+                    aria-label="Close Notice">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div id="sandboxNoticeContent" class="px-6 sm:px-8 py-6 overflow-y-auto space-y-6 text-sm text-gray-300 leading-relaxed">
+                <!-- Overview Banner -->
+                <div class="bg-white/5 border border-brand-green/30 rounded-xl p-4">
+                    <p class="font-heading font-bold text-white text-sm mb-1">Independent Software Prototype &amp; Technical Demonstration</p>
+                    <p class="text-xs sm:text-sm text-gray-300">
+                        This application is an independent software prototype and technical demonstration environment. It is operated solely for functional evaluation, UI/UX showcase, and architecture testing, and does not represent an active commercial entity.
+                    </p>
+                </div>
+
+                <!-- Privacy & Sandbox Data Notice -->
+                <div id="noticePrivacySection" class="space-y-3">
+                    <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+                        <span>1. Privacy &amp; Sandbox Data Notice</span>
+                    </h4>
+                    <p class="text-gray-400">
+                        This application is a non-commercial prototype and demonstration environment. Please <strong class="text-white font-semibold">do not submit real sensitive, financial, or confidential personal information</strong> into any forms or inputs.
+                    </p>
+                    <ul class="list-disc list-inside space-y-1.5 text-gray-400 pl-1">
+                        <li><strong class="text-gray-200">Ephemeral Functional State:</strong> Any data, state, or accounts created within this project are stored purely for functional testing (via local storage or temporary database state), are never sold or shared with third parties, and may be periodically reset or wiped without notice.</li>
+                        <li><strong class="text-gray-200">Hosting Telemetry:</strong> Basic, anonymized hosting telemetry (such as standard request logs and content delivery metrics) may be processed by the cloud hosting provider solely to serve and secure the application.</li>
+                    </ul>
+                </div>
+
+                <!-- Terms of Use & Liability -->
+                <div id="noticeTermsSection" class="space-y-3 pt-2 border-t border-white/10">
+                    <h4 class="font-heading font-bold text-white text-base flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-brand-green"></span>
+                        <span>2. Terms of Use &amp; Liability</span>
+                    </h4>
+                    <ul class="space-y-2.5 text-gray-400">
+                        <li>
+                            <strong class="text-gray-200">As-Is Software:</strong> This project is provided "as-is" for demonstration and evaluation purposes, without warranties of any kind regarding uptime, data persistence, or fitness for a particular purpose.
+                        </li>
+                        <li>
+                            <strong class="text-gray-200">Mock Content:</strong> Any pre-populated data, mock profiles, pricing, service claims, contact details, or scenarios depicted in the application are fictional and provided for illustrative purposes only.
+                        </li>
+                        <li>
+                            <strong class="text-gray-200">Intellectual Property:</strong> The custom source code, UI design, and architecture of this project remain the intellectual property of the developer, unless otherwise noted by applicable open-source licenses.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs text-gray-500">
+                    <span>Independent Software Prototype</span>
+                    <span>Last updated: October 2026</span>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="px-6 sm:px-8 py-4 border-t border-white/10 bg-black/30 rounded-b-2xl flex justify-end">
+                <button onclick="closeSandboxNoticeModal()"
+                    class="bg-brand-green hover:bg-brand-darkGreen text-white font-semibold text-sm px-6 py-2.5 rounded-full transition shadow-md">
+                    Acknowledge &amp; Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= JAVASCRIPT LOGIC ================= -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOpenIcon = document.getElementById('menuOpenIcon');
+        const menuCloseIcon = document.getElementById('menuCloseIcon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.contains('hidden');
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                menuOpenIcon.classList.add('hidden');
+                menuCloseIcon.classList.remove('hidden');
+            } else {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            });
+        });
+
+        // Quote Modal Functions
+        const quoteModal = document.getElementById('quoteModal');
+        const quoteFormContainer = document.getElementById('quoteFormContainer');
+        const quoteSuccess = document.getElementById('quoteSuccess');
+        const quoteForm = document.getElementById('quoteForm');
+
+        function openQuoteModal() {
+            quoteFormContainer.classList.remove('hidden');
+            quoteSuccess.classList.add('hidden');
+            quoteModal.classList.remove('hidden');
+            quoteModal.classList.add('flex');
+        }
+
+        function closeQuoteModal() {
+            quoteModal.classList.add('hidden');
+            quoteModal.classList.remove('flex');
+        }
+
+        function submitQuoteForm(e) {
+            e.preventDefault();
+            quoteFormContainer.classList.add('hidden');
+            quoteSuccess.classList.remove('hidden');
+            quoteForm.reset();
+        }
+
+        // Gallery "View More Projects" Toggle
+        let moreProjectsVisible = false;
+        function toggleMoreProjects() {
+            const moreGrid = document.getElementById('moreProjectsGrid');
+            const btnText = document.getElementById('toggleProjectsText');
+            moreProjectsVisible = !moreProjectsVisible;
+
+            if (moreProjectsVisible) {
+                moreGrid.classList.remove('hidden');
+                moreGrid.classList.add('grid');
+                btnText.textContent = 'Show Fewer Projects';
+            } else {
+                moreGrid.classList.add('hidden');
+                moreGrid.classList.remove('grid');
+                btnText.textContent = 'View More Projects';
+            }
+        }
+
+        // Project Image Lightbox
+        const lightboxModal = document.getElementById('lightboxModal');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCaption = document.getElementById('lightboxCaption');
+
+        function openLightbox(imgUrl, caption) {
+            lightboxImg.src = imgUrl;
+            lightboxCaption.textContent = caption;
+            lightboxModal.classList.remove('hidden');
+            lightboxModal.classList.add('flex');
+        }
+
+        function closeLightbox() {
+            lightboxModal.classList.add('hidden');
+            lightboxModal.classList.remove('flex');
+        }
+
+        // Unified Project Prototype & Sandbox Notice Modal
+        const sandboxNoticeModal = document.getElementById('sandboxNoticeModal');
+        const sandboxNoticeContent = document.getElementById('sandboxNoticeContent');
+
+        function openSandboxNoticeModal(sectionId) {
+            sandboxNoticeModal.classList.remove('hidden');
+            sandboxNoticeModal.classList.add('flex');
+            if (sectionId) {
+                const target = document.getElementById(sectionId);
+                if (target) {
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 50);
+                }
+            } else if (sandboxNoticeContent) {
+                sandboxNoticeContent.scrollTop = 0;
+            }
+        }
+
+        function closeSandboxNoticeModal() {
+            sandboxNoticeModal.classList.add('hidden');
+            sandboxNoticeModal.classList.remove('flex');
+        }
+
+        function openPrivacyModal() {
+            openSandboxNoticeModal('noticePrivacySection');
+        }
+
+        function openTermsModal() {
+            openSandboxNoticeModal('noticeTermsSection');
+        }
+
+        // Close modals on Escape key
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeQuoteModal();
+                closeLightbox();
+                closeSandboxNoticeModal();
+            }
+        });
+    </script>
+</body>
+
+</html>
