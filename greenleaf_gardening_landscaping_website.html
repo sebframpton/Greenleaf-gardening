@@ -65,15 +65,6 @@
             background-position: center;
         }
 
-        /* Testimonials Foliage Dark Background */
-        .testimonials-bg {
-            background-image:
-                linear-gradient(90deg, rgba(7, 22, 12, 0.90) 0%, rgba(11, 32, 18, 0.82) 100%),
-                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-        }
-
         /* CTA Banner Dark Grass Background */
         .cta-bg {
             background-image:
@@ -83,14 +74,20 @@
             background-position: center;
         }
 
-        /* Service Card Hover Subtle Lift */
-        .service-card {
-            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+        /* Service & Process Card Hover Subtle Lift */
+        .service-card,
+        .process-card {
+            transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.28s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .service-card:hover {
+        .service-card:hover,
+        .process-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 18px 35px -10px rgba(16, 42, 23, 0.12);
+        }
+
+        .process-card:hover {
+            border-color: rgba(84, 180, 53, 0.38);
         }
 
         .service-card:hover .service-img {
@@ -153,8 +150,8 @@
                     <a href="#home" class="nav-link active text-white">Home</a>
                     <a href="#services" class="nav-link hover:text-white transition">Services</a>
                     <a href="#about" class="nav-link hover:text-white transition">About</a>
+                    <a href="#process" class="nav-link hover:text-white transition">Process</a>
                     <a href="#gallery" class="nav-link hover:text-white transition">Gallery</a>
-                    <a href="#testimonials" class="nav-link hover:text-white transition">Testimonials</a>
                     <a href="#contact" class="nav-link hover:text-white transition">Contact</a>
                 </nav>
 
@@ -192,8 +189,8 @@
                 <a href="#home" class="block py-2 text-brand-green font-semibold">Home</a>
                 <a href="#services" class="block py-2 text-gray-200 hover:text-white">Services</a>
                 <a href="#about" class="block py-2 text-gray-200 hover:text-white">About</a>
+                <a href="#process" class="block py-2 text-gray-200 hover:text-white">Process</a>
                 <a href="#gallery" class="block py-2 text-gray-200 hover:text-white">Gallery</a>
-                <a href="#testimonials" class="block py-2 text-gray-200 hover:text-white">Testimonials</a>
                 <a href="#contact" class="block py-2 text-gray-200 hover:text-white">Contact</a>
                 <div class="pt-2">
                     <button onclick="openQuoteModal()"
@@ -674,97 +671,69 @@
         </div>
     </section>
 
-    <!-- ================= TESTIMONIALS SECTION ================= -->
-    <section id="testimonials" class="py-16 lg:py-20 testimonials-bg">
+    <!-- ================= OUR PROCESS SECTION ================= -->
+    <section id="process" class="py-16 lg:py-24 bg-brand-lightBg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <!-- Section Header -->
-            <div class="mb-10">
+            <div class="max-w-2xl mb-12">
                 <span class="text-xs font-bold uppercase tracking-[0.14em] text-brand-green block mb-2">
-                    TESTIMONIALS
+                    OUR PROCESS
                 </span>
-                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-                    What Our Clients Say
+                <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight mb-3.5">
+                    Simple, Straightforward Landscaping
                 </h2>
+                <p class="text-gray-600 text-base leading-relaxed">
+                    From initial walkthrough to final clean-up, here is what to expect.
+                </p>
             </div>
 
-            <!-- 3 Testimonial Cards Grid -->
+            <!-- 3-Step Process Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-7">
 
-                <!-- Testimonial Card 1 -->
-                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
-                    <div>
-                        <!-- Green Quote Mark -->
-                        <div class="text-brand-green mb-3">
-                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-                            </svg>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                            "The team at GreenLeaf did an amazing job on our garden. They were professional, reliable
-                            and the results were better than we could have imagined!"
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80"
-                            alt="Sarah M." class="w-10 h-10 rounded-full object-cover border border-gray-200"
-                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=SM'">
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-900 leading-tight">Sarah M.</h4>
-                            <span class="text-xs text-gray-400">Applecross, WA</span>
-                        </div>
-                    </div>
+                <!-- Step 01 -->
+                <div class="process-card group bg-white rounded-2xl p-8 border border-brand-green/15 flex flex-col h-full">
+                    <span
+                        class="font-heading text-5xl sm:text-[56px] font-extrabold leading-none tracking-tight tabular-nums text-brand-green/30 group-hover:text-brand-green/55 transition-colors duration-300 block mb-6 select-none">
+                        01
+                    </span>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 tracking-tight mb-3">
+                        Site Visit &amp; Scope
+                    </h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        We walk your property, assess the layout, soil, and drainage, and map out a clear plan around
+                        your goals.
+                    </p>
                 </div>
 
-                <!-- Testimonial Card 2 -->
-                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
-                    <div>
-                        <div class="text-brand-green mb-3">
-                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-                            </svg>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                            "Great service, affordable prices and fantastic communication. Our lawn has never looked
-                            better. Highly recommend!"
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
-                            alt="James T." class="w-10 h-10 rounded-full object-cover border border-gray-200"
-                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=JT'">
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-900 leading-tight">James T.</h4>
-                            <span class="text-xs text-gray-400">Mount Pleasant, WA</span>
-                        </div>
-                    </div>
+                <!-- Step 02 -->
+                <div class="process-card group bg-white rounded-2xl p-8 border border-brand-green/15 flex flex-col h-full">
+                    <span
+                        class="font-heading text-5xl sm:text-[56px] font-extrabold leading-none tracking-tight tabular-nums text-brand-green/30 group-hover:text-brand-green/55 transition-colors duration-300 block mb-6 select-none">
+                        02
+                    </span>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 tracking-tight mb-3">
+                        Fixed-Price Quote
+                    </h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Receive a transparent, itemised quote within 48 hours—clear timelines and zero surprise
+                        add-ons.
+                    </p>
                 </div>
 
-                <!-- Testimonial Card 3 -->
-                <div class="bg-white rounded-xl p-7 shadow-lg flex flex-col justify-between">
-                    <div>
-                        <div class="text-brand-green mb-3">
-                            <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                                <path
-                                    d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.571-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
-                            </svg>
-                        </div>
-                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
-                            "From start to finish, the process was smooth and easy. The crew were friendly, worked hard
-                            and left our yard looking incredible."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3.5 pt-2">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80"
-                            alt="Emily R." class="w-10 h-10 rounded-full object-cover border border-gray-200"
-                            onerror="this.src='https://placehold.co/80x80/54B435/ffffff?text=ER'">
-                        <div>
-                            <h4 class="text-sm font-bold text-gray-900 leading-tight">Emily R.</h4>
-                            <span class="text-xs text-gray-400">Como, WA</span>
-                        </div>
-                    </div>
+                <!-- Step 03 -->
+                <div class="process-card group bg-white rounded-2xl p-8 border border-brand-green/15 flex flex-col h-full">
+                    <span
+                        class="font-heading text-5xl sm:text-[56px] font-extrabold leading-none tracking-tight tabular-nums text-brand-green/30 group-hover:text-brand-green/55 transition-colors duration-300 block mb-6 select-none">
+                        03
+                    </span>
+                    <h3 class="font-heading text-xl font-bold text-gray-900 tracking-tight mb-3">
+                        Build &amp; Clean Handover
+                    </h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        On-time execution with quality materials, 100% green waste removal, and a final walkthrough
+                        before we leave.
+                    </p>
                 </div>
 
             </div>
@@ -1071,8 +1040,8 @@
                         <li><a href="#home" class="hover:text-brand-green transition">Home</a></li>
                         <li><a href="#services" class="hover:text-brand-green transition">Services</a></li>
                         <li><a href="#about" class="hover:text-brand-green transition">About</a></li>
+                        <li><a href="#process" class="hover:text-brand-green transition">Process</a></li>
                         <li><a href="#gallery" class="hover:text-brand-green transition">Gallery</a></li>
-                        <li><a href="#testimonials" class="hover:text-brand-green transition">Testimonials</a></li>
                         <li><a href="#contact" class="hover:text-brand-green transition">Contact</a></li>
                     </ul>
                 </div>
